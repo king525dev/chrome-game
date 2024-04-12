@@ -1,0 +1,80 @@
+*{
+     padding: 0;
+     margin: 0;
+     font-size: 10px;
+     transition: all 0.3s ease;
+}
+
+body{
+     height: 100vh;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+#centre-text{
+     position: absolute;
+     top: 50%;
+     font-size: 4rem;
+     font-family: "Press Start 2P", sans-serif;
+}
+
+#board{
+     position: relative;
+}
+
+.score{
+     position: absolute;
+     top: 0;
+     right: 0;
+     font-family: "Press Start 2P", sans-serif;
+}
+
+#game{
+     width: 50vw;
+     height: 30vh;
+     min-width: 500px;
+     min-height: 200px;
+     border-bottom: 0.3rem solid #000;
+}
+
+#character{
+     width: 2rem;
+     height: 3rem;
+     left: 3.5rem;
+     top: calc(100% - 3rem);
+     transition: all 0.3s ease-in-out;
+     position: relative;
+}
+
+#character img {
+     width: 2rem;
+     height: 3rem;
+}
+
+.jump{
+     animation: jump 0.5s linear;
+}
+
+#block {
+     background-color: #000;
+     width: 2rem;
+     height: 2rem;
+     position: relative;
+     top: calc(100% - 5rem);
+     left: calc(100% - 2rem); 
+     animation: block 3s infinite linear;
+}
+
+@keyframes jump{
+     0%{top: calc(100% - 3rem);}
+     30%{top: calc(100% - 8rem);}
+     70%{top: calc(100% - 8rem);}
+     100%{top: calc(100% - 3rem);}
+}
+
+@keyframes block{
+     0%{left: calc(100% - 2rem);}
+     100%{left: 0;}
+}
