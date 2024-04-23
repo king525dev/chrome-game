@@ -11,6 +11,8 @@ body{
      display: flex;
      justify-content: center;
      align-items: center;
+     background-color: #000;
+     color: #fff;
 }
 
 #centre-text{
@@ -43,7 +45,7 @@ body{
      height: 30vh;
      min-width: 500px;
      min-height: 200px;
-     border-bottom: 0.3rem solid #000;
+     border-bottom: 0.3rem solid #fff;
 }
 
 #character{
@@ -65,7 +67,7 @@ body{
 }
 
 #block {
-     background-color: #000;
+     background-color: #fff;
      width: 2rem;
      height: 2rem;
      position: relative;
