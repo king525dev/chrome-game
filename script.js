@@ -5,9 +5,12 @@ const characterImage = document.getElementById("charImg");
 const body = document.getElementsByTagName("body");
 const style = document.querySelector("link#var");
 let state = true;
+let game = true;
+let speed = false;
 
-var counter = -1;
+var counter = 0;
 var tick = 3
+console.log(tick)
 
 document.addEventListener('keydown', e => { 
      if (e.key == " ") {
@@ -54,13 +57,18 @@ function startGameplay(){
           centreText.style.display = "none";
           midGame();
      });
+     increaseSpeed();
 }
 
 function midGame(){
+     console.log("activated")
      document.getElementById("hi-score").innerHTML = getHighScore();
      block.style.animation =  `block ${tick}s infinite linear`
-
-     charImg.setAttribute("src", "./resources/active-day.png")
+     if(state){
+          charImg.setAttribute("src", "./resources/active-day.png")
+     }else{
+          charImg.setAttribute("src", "./resources/active-night.png")
+     }
      document.addEventListener("click", () => jump());
 
      const score = Math.round(counter/100);
@@ -84,17 +92,6 @@ function midGame(){
           }
      }, 100);
 
-     // setInterval(() => {
-     //      const blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-     //      if(Math.round((counter/100)+11) % 5  == 0 && counter > 7 && blockLeft > 120){
-     //           tick = (tick < 0.8)? tick: tick - 0.01;
-     //           setTimeout(() => {
-     //                block.style.animationDuration = `${tick}s`;
-     //           },2000);
-     //      }
-     //      console.log(tick)
-     // }, 4000);
-
      // const tickSpeed  = setInterval(() => {
      //      const blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
      //      if(state && tick > 0.8 && blockLeft > 450){
@@ -109,6 +106,27 @@ function midGame(){
      //           //console.log(`Counter: ${counter}`)
      //      }
      // }, 1000)
+}
+
+// function scorer(){
+//      if (game) {
+//           setInterval(() => {
+//                counter++
+//           }, 3000)
+//      }
+// }
+
+function increaseSpeed(){
+     console.log("speedster")
+     setInterval(() => {
+          const blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+          if(Math.round((counter/100)+11) % 5  == 0 && counter > 7 && blockLeft > 120){
+               block.style.left = `${blockLeft}px`;
+               tick = (tick < 0.8)? tick: tick - 0.4;
+               block.style.animationDuration = `${tick}s`;
+          }
+          console.log(tick)
+     }, 20000);
 }
 
 setInterval(() => {
