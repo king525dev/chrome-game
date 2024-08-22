@@ -17,8 +17,8 @@ To jump over obstacles, simply press the `Space` bar or the `Up` arrow key on yo
 
 You can play the Chrome Game in two ways:
 
-1. **In-Browser**: Visit the [GitHub releases section](#) to play the game directly in your browser.
-2. **Downloadable Version**: Access the executable version from the [GitHub releases section](#) for a downloadable option.
+1. **In-Browser**: Visit the [GitHub releases section](https://github.com/king525dev/chrome-game/releases) to play the game directly in your browser.
+2. **Downloadable Version**: Access the executable version from the [GitHub releases section](https://github.com/king525dev/chrome-game/releases) for a downloadable option.
 
 ## About the Author
 
